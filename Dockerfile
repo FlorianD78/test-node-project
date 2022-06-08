@@ -6,7 +6,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package.json ./
 RUN npm install
-RUN npm test
+RUN npm run test -- -t src/component/App.test.js
 
 COPY . ./
 

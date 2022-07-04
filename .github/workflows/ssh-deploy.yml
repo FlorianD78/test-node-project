@@ -32,4 +32,4 @@ jobs:
         # connection timeout to remote host
         connect_timeout: 30
         # execute commands on ssh
-        script: docker run -p 80:80 floo78340/calculator:v1
+        script: whoami

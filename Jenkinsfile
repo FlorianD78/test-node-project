@@ -8,7 +8,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh 'sudo docker build -t' + dockerName + ":$BUILD_NUMBER" '.'
+          dockerImage = docker.build dockerName + ":$BUILD_NUMBER"
         }
       }
     }

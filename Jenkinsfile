@@ -9,6 +9,9 @@ pipeline {
       steps{
         script {
           sh 'ls'
+          
+          sh 'docker build -t calculator .'
+          
           echo '++++++++++++++ Test PASS ++++++++++++++'
         }
       }

@@ -3,7 +3,7 @@ pipeline {
   dockerImage = ''
   dockerName = 'calculator'
   }
-  agent any
+  agent {docker{image 'docker:dind'}}
   stages {
     stage('Test command') {
       steps{

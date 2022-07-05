@@ -1,10 +1,11 @@
 pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'Build success'
-            }
-        }
+  agent none
+  stages {
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build -t calculator .'
+      }
     }
+  }
 }

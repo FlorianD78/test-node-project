@@ -8,10 +8,7 @@ pipeline {
     stage('Test command') {
       steps{
         script {
-          sh 'ls'
-          
-          sh 'docker build -t calculator .'
-          
+          sh 'ls'          
           echo '++++++++++++++ Test PASS ++++++++++++++'
         }
       }

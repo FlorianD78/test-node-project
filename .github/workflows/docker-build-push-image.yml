@@ -62,4 +62,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: floo78340/calculator:$(date +%s)
+          tags: floo78340/calculator:v-test-1

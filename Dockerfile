@@ -1,14 +1,15 @@
-FROM node:13.12.0-alpine
-
+FROM node:16-alpine AS development
+ENV NODE_ENV development
+# Add a work directory
 WORKDIR /app
-
-ENV PATH /app/node_modules/.bin:$PATH
-
-COPY package.json ./
-RUN npm install
-RUN npm install react-scripts@3.4.1
-
-COPY . ./
-
+# Cache and Install dependencies
+COPY package.json .
+COPY yarn.lock .
+RUN yarn install
+# Copy app files
+COPY . .
+# Expose port
 EXPOSE 3000
-CMD ["npm", "start"]
+# Start the app
+CMD [ "yarn", "start" ]
+
